@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4C11E88A-1D86-43FD-BFFE-0226766F9A95}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{39F02C88-723F-4453-B076-82764D0E0DF7}</ProjectGuid>
+    <OutputType>winmdobj</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LiveSDK.ObjectModel</RootNamespace>
-    <AssemblyName>LiveSDK.ObjectModel.UniversalApps</AssemblyName>
+    <RootNamespace>LiveSDK.ObjectModel.WinStore</RootNamespace>
+    <AssemblyName>LiveSDK.ObjectModel.WinStore</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -36,14 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Contact.cs" />
-    <Compile Include="Contacts.cs" />
-    <Compile Include="Emails.cs" />
-    <Compile Include="Extensions\ExtensionMethods.cs" />
-    <Compile Include="LiveScopes.cs" />
-    <Compile Include="LiveSDKOM.cs" />
-    <Compile Include="LiveSDKOMConsts.cs" />
-    <Compile Include="Picture.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -55,9 +48,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Fonts\LiveSymbol.ttf" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
