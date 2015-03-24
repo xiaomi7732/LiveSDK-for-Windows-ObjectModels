@@ -6,7 +6,7 @@ This is an object models for Live-SDK-for-Windows to make it easier to use.
 2. Add Reference to this LiveSDK.ObjectModel.UniversalApps.dll.
 
 Sample Code:
-{
+```
 using LiveSDK.ObjectModel;
 using LiveSDK.ObjectModel.Extensions;
 using Microsoft.Live;
@@ -58,6 +58,6 @@ namespace SampleCode
 		}
 	}
 }
-}
+```
 # Project progress
 3/23: Just started this project. Only Contacts and Pictures are supported.
