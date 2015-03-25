@@ -19,6 +19,9 @@ namespace LiveSDK.ObjectModel
     using System.Collections.Generic;
     using System.Runtime.Serialization;
 
+    /// <summary>
+    /// Contact wrapper for LiveSDK contact object. Refer https://msdn.microsoft.com/en-us/library/hh243648.aspx#contact for details.
+    /// </summary>
     [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
     public class Contact : LiveSDKOM
     {
@@ -53,6 +56,12 @@ namespace LiveSDK.ObjectModel
 
         [DataMember(Name = "udpated_time")]
         public DateTimeOffset UpdatedTime { get; set; }
+
+        [DataMember(Name = "birth_day")]
+        public int? BirthDay { get; set; }
+
+        [DataMember(Name = "birth_month")]
+        public int? BirthMonth { get; set; }
 
         [DataMember(Name = "emails")]
         public Emails Emails { get; set; }
