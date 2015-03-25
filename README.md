@@ -1,5 +1,5 @@
 # LiveSDK-for-Windows-ObjectModels
-This is an object models for Live-SDK-for-Windows to make it easier to use.
+This is object models for Live-SDK-for-Windows to make it easier to use, cause less error.
 
 # Code samples
 1. Add NuGet package of LiveSDK.
