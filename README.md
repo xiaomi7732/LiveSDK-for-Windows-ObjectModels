@@ -22,8 +22,10 @@ namespace SampleCode
 
             auth = new LiveAuthClient();
             initResult = await auth.InitializeAsync();
+            // =============================================================================================
+			// More strong typed LiveScopes are provided in this Library.
+			// =============================================================================================
             loginResult = await auth.LoginAsync(new string[]{
-				// More strong typed LiveScopes are provided in this SDK.
                 LiveScopes.Basic,
                 LiveScopes.ContactsEmails,
                 LiveScopes.ContactsPhotos
@@ -32,9 +34,13 @@ namespace SampleCode
 			if (loginResult.Session != null)
             {
                 LiveConnectClient connect = new LiveConnectClient(auth.Session);
+                // =============================================================================================
 				// GetAsync<T> extenion method provides convenient way to get strong typed result out of LiveSDK calls.
+				// =============================================================================================
                 Contacts contacts = await connect.GetAsync<Contacts>("me/contacts");
+                // =============================================================================================
                 // Get a list of the contacts.
+                // =============================================================================================
 				var contactList = contacts.Items.ToList();
 				...
             }   
