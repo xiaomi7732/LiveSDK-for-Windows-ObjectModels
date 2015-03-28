@@ -16,14 +16,16 @@ namespace LiveSDK.ObjectModel
 {
     using System.Runtime.Serialization;
 
+    /// <summary>
+    /// Info about the user's work position.
+    /// </summary>
     [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    public class Picture : LiveSDKOM
+    public class Position : LiveSDKOM
     {
-        public Picture()
-        {
-        }
-
-        [DataMember(Name = "location")]
-        public string Location { get; set; }
+        /// <summary>
+        /// The name of the user's work position, or null if the name of the work position is not specified.
+        /// </summary>
+        [DataMember(Name = "name")]
+        public string Name { get; set; }
     }
 }

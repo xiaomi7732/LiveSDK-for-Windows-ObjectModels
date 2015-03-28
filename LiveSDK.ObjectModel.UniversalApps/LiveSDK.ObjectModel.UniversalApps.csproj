@@ -36,6 +36,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Address.cs" />
+    <Compile Include="Addresses.cs" />
+    <Compile Include="Business.cs" />
+    <Compile Include="Employer.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="Contacts.cs" />
     <Compile Include="Emails.cs" />
@@ -43,8 +47,13 @@
     <Compile Include="LiveScopes.cs" />
     <Compile Include="LiveSDKOM.cs" />
     <Compile Include="LiveSDKOMConsts.cs" />
+    <Compile Include="Personal.cs" />
+    <Compile Include="Phones.cs" />
     <Compile Include="Picture.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="Work.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Live">

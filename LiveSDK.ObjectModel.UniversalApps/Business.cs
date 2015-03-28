@@ -16,14 +16,11 @@ namespace LiveSDK.ObjectModel
 {
     using System.Runtime.Serialization;
 
+    /// <summary>
+    /// The user's business postal address.
+    /// </summary>
     [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    public class Picture : LiveSDKOM
+    public class Business : Address
     {
-        public Picture()
-        {
-        }
-
-        [DataMember(Name = "location")]
-        public string Location { get; set; }
     }
 }

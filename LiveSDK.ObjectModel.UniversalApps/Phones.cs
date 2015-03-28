@@ -16,14 +16,28 @@ namespace LiveSDK.ObjectModel
 {
     using System.Runtime.Serialization;
 
+    /// <summary>
+    /// The user's phone numbers.
+    /// </summary>
     [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    public class Picture : LiveSDKOM
+    public class Phones : LiveSDKOM
     {
-        public Picture()
-        {
-        }
+        /// <summary>
+        /// The user's personal phone number, or null if one is not specified.
+        /// </summary>
+        [DataMember(Name = "personal")]
+        public string Personal { get; set; }
 
-        [DataMember(Name = "location")]
-        public string Location { get; set; }
+        /// <summary>
+        /// The user's business phone number, or null if one is not specified.
+        /// </summary>
+        [DataMember(Name="business")]
+        public string Business { get; set; }
+
+        /// <summary>
+        /// The user's mobile phone number, or null if one is not specified.
+        /// </summary>
+        [DataMember(Name="mobile")]
+        public string Mobile { get; set; }
     }
 }

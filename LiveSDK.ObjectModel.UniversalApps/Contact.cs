@@ -14,7 +14,6 @@
 
 namespace LiveSDK.ObjectModel
 {
-    using LiveSDK.ObjectModel.Extensions;
     using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;

@@ -12,9 +12,9 @@
 /// GNU General Public License for more details.
 /// =======================================================================================
 
-using System.Runtime.Serialization;
 namespace LiveSDK.ObjectModel
 {
+    using System.Runtime.Serialization;
     /// <summary>
     /// Base class of LiveSDK Object Models.
     /// </summary>
@@ -22,6 +22,13 @@ namespace LiveSDK.ObjectModel
     [KnownType(typeof(Contact))]
     [KnownType(typeof(Contacts))]
     [KnownType(typeof(Emails))]
+    [KnownType(typeof(User))]
+    [KnownType(typeof(Work))]
+    [KnownType(typeof(Employer))]
+    [KnownType(typeof(Position))]
+    [KnownType(typeof(Address))]
+    [KnownType(typeof(Addresses))]
+    [KnownType(typeof(Phones))]
     public abstract class LiveSDKOM
     {
     }

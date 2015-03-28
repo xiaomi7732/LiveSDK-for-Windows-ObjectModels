@@ -15,15 +15,22 @@
 namespace LiveSDK.ObjectModel
 {
     using System.Runtime.Serialization;
-
+    /// <summary>
+    /// The user's work info.
+    /// </summary>
     [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    public class Picture : LiveSDKOM
+    public class Work : LiveSDKOM
     {
-        public Picture()
-        {
-        }
+        /// <summary>
+        /// Info about the user's employer.
+        /// </summary>
+        [DataMember(Name = "employer")]
+        public Employer Employer { get; set; }
 
-        [DataMember(Name = "location")]
-        public string Location { get; set; }
+        /// <summary>
+        /// Info about the user's work position.
+        /// </summary>
+        [DataMember(Name = "position")]
+        public Position Position { get; set; }
     }
 }
