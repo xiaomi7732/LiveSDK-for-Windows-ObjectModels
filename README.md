@@ -66,4 +66,5 @@ namespace SampleCode
 }
 ```
 # Project progress
+3/27: Wrap up the User object.
 3/23: Just started this project. Only Contacts and Pictures are supported.
