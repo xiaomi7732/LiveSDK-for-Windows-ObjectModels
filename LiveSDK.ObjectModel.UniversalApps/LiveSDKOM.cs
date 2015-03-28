@@ -19,17 +19,11 @@ namespace LiveSDK.ObjectModel
     /// Base class of LiveSDK Object Models.
     /// </summary>
     [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    [KnownType(typeof(Contact))]
     [KnownType(typeof(Contacts))]
-    [KnownType(typeof(Emails))]
     [KnownType(typeof(User))]
-    [KnownType(typeof(Work))]
-    [KnownType(typeof(Employer))]
-    [KnownType(typeof(Position))]
-    [KnownType(typeof(Address))]
-    [KnownType(typeof(Addresses))]
-    [KnownType(typeof(Phones))]
     public abstract class LiveSDKOM
     {
+        [DataMember(Name = "udpated_time")]
+        public string UpdatedTime { get; set; }
     }
 }

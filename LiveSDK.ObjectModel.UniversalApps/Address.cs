@@ -22,7 +22,7 @@ namespace LiveSDK.ObjectModel
     [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
     [KnownType(typeof(Personal))]
     [KnownType(typeof(Business))]
-    public class Address : LiveSDKOM
+    public class Address
     {
         /// <summary>
         /// The user's street address, or null if one is not specified.

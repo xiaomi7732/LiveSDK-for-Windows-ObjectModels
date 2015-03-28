@@ -19,7 +19,7 @@ namespace LiveSDK.ObjectModel
     /// Info about the user's employer.
     /// </summary>
     [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    public class Employer : LiveSDKOM
+    public class Employer
     {
         /// <summary>
         /// The name of the user's employer, or null if the employer's name is not specified.

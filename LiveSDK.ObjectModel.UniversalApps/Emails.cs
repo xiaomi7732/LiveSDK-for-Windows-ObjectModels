@@ -17,7 +17,7 @@ namespace LiveSDK.ObjectModel
     using System.Runtime.Serialization;
 
     [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    public class Emails : LiveSDKOM
+    public class Emails
     {
         public Emails()
         {

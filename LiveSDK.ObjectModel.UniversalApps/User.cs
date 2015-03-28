@@ -106,6 +106,6 @@ namespace LiveSDK.ObjectModel
         /// The time, in ISO 8601 format, at which the user last updated the object.
         /// </summary>
         [DataMember(Name = "updated_time")]
-        public DateTimeOffset UpdatedTime { get; set; }
+        public string UpdatedTime { get; set; }
     }
 }

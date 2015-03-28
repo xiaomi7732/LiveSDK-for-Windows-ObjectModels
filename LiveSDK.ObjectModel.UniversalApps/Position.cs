@@ -20,7 +20,7 @@ namespace LiveSDK.ObjectModel
     /// Info about the user's work position.
     /// </summary>
     [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    public class Position : LiveSDKOM
+    public class Position 
     {
         /// <summary>
         /// The name of the user's work position, or null if the name of the work position is not specified.

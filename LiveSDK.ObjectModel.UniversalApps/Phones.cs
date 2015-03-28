@@ -20,7 +20,7 @@ namespace LiveSDK.ObjectModel
     /// The user's phone numbers.
     /// </summary>
     [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    public class Phones : LiveSDKOM
+    public class Phones
     {
         /// <summary>
         /// The user's personal phone number, or null if one is not specified.

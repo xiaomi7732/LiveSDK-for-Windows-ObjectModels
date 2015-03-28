@@ -20,7 +20,7 @@ namespace LiveSDK.ObjectModel
     /// The user's postal addresses.
     /// </summary>
     [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    public class Addresses : LiveSDKOM
+    public class Addresses
     {
         /// <summary>
         /// The user's personal postal address.

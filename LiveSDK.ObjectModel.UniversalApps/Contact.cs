@@ -19,7 +19,7 @@ namespace LiveSDK.ObjectModel
     using System.Runtime.Serialization;
 
     [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    public class Contact : LiveSDKOM
+    public class Contact 
     {
         public Contact() { }
 
@@ -49,9 +49,6 @@ namespace LiveSDK.ObjectModel
 
         [DataMember(Name = "email_hashes")]
         public List<string> EmailHashes { get; set; }
-
-        [DataMember(Name = "udpated_time")]
-        public DateTimeOffset UpdatedTime { get; set; }
 
         [DataMember(Name = "emails")]
         public Emails Emails { get; set; }
