@@ -14,16 +14,16 @@
 
 namespace LiveSDK.ObjectModel
 {
-    using System.Runtime.Serialization;
+    using Newtonsoft.Json;
 
-    [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
+    [JsonObject]
     public class Picture : LiveSDKOM
     {
         public Picture()
         {
         }
 
-        [DataMember(Name = "location")]
+        [JsonProperty("location")]
         public string Location { get; set; }
     }
 }

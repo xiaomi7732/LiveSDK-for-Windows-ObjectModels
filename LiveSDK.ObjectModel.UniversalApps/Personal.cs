@@ -14,12 +14,12 @@
 
 namespace LiveSDK.ObjectModel
 {
-    using System.Runtime.Serialization;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// The user's personal postal address.
     /// </summary>
-    [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
+    [JsonObject]
     public class Personal : Address
     {
     }

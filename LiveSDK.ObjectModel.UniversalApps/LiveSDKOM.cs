@@ -14,16 +14,38 @@
 
 namespace LiveSDK.ObjectModel
 {
-    using System.Runtime.Serialization;
+    using Newtonsoft.Json;
+    using System;
     /// <summary>
     /// Base class of LiveSDK Object Models.
     /// </summary>
-    [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    [KnownType(typeof(Contacts))]
-    [KnownType(typeof(User))]
+    [JsonObject(MemberSerialization.OptIn)]
     public abstract class LiveSDKOM
     {
-        [DataMember(Name = "udpated_time")]
-        public string UpdatedTime { get; set; }
+        /// <summary>
+        /// The time, at which the user last updated the object.
+        /// </summary>
+        public DateTimeOffset? UpdatedTimeOffset
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(UpdatedTimeString))
+                {
+                    DateTimeOffset updateTime;
+                    if (DateTimeOffset.TryParse(UpdatedTimeString, out updateTime))
+                    {
+                        return updateTime;
+                    }
+                    return null;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        [JsonProperty("updated_time")]
+        private string UpdatedTimeString { get; set; }
     }
 }

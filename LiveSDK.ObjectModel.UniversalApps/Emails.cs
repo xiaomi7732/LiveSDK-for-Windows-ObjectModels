@@ -14,28 +14,28 @@
 
 namespace LiveSDK.ObjectModel
 {
-    using System.Runtime.Serialization;
+    using Newtonsoft.Json;
 
-    [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
+    [JsonObject]
     public class Emails
     {
         public Emails()
         {
         }
 
-        [DataMember(Name = "preferred")]
+        [JsonProperty("preferred")]
         public string Preferred { get; set; }
 
-        [DataMember(Name = "account")]
+        [JsonProperty("account")]
         public string Account { get; set; }
 
-        [DataMember(Name = "personal")]
+        [JsonProperty("personal")]
         public string Personal { get; set; }
 
-        [DataMember(Name = "business")]
+        [JsonProperty("business")]
         public string Business { get; set; }
 
-        [DataMember(Name = "other")]
+        [JsonProperty("other")]
         public string Other { get; set; }
     }
 }

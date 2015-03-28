@@ -14,98 +14,92 @@
 
 namespace LiveSDK.ObjectModel
 {
-    using System;
+    using Newtonsoft.Json;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
 
     /// <summary>
     /// The User object contains info about a user. The Live Connect REST API supports reading User objects.
     /// </summary>
-    [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
+    //[JsonObject]
+    [JsonObject]
     public class User : LiveSDKOM
     {
         /// <summary>
         /// The user's ID.
         /// </summary>
-        [DataMember(Name = "id")]
+        [JsonProperty("id")]
         public string Id { get; set; }
 
         /// <summary>
         /// The user's full name.
         /// </summary>
-        [DataMember(Name = "name")]
+        [JsonProperty("name")]
         public string Name { get; set; }
 
         /// <summary>
         /// The user's first name.
         /// </summary>
-        [DataMember(Name = "first_name")]
+        [JsonProperty("first_name")]
         public string FirstName { get; set; }
 
         /// <summary>
         /// The user's last name.
         /// </summary>
-        [DataMember(Name = "last_name")]
+        [JsonProperty("last_name")]
         public string LastName { get; set; }
 
         /// <summary>
         /// The URL of the user's profile page.
         /// </summary>
-        [DataMember(Name = "link")]
+        [JsonProperty("link")]
         public string Link { get; set; }
 
         /// <summary>
         /// The day of the user's birth date, or null if no birth date is specified.
         /// </summary>
-        [DataMember(Name = "birth_day")]
+        [JsonProperty("birth_day")]
         public int? BirthDay { get; set; }
 
         /// <summary>
         /// The month of the user's birth date, or null if no birth date is specified.
         /// </summary>
-        [DataMember(Name = "birth_month")]
+        [JsonProperty("birth_month")]
         public int? BirthMonth { get; set; }
 
         /// <summary>
         /// The year of the user's birth date, or null if no birth date is specified.
         /// </summary>
-        [DataMember(Name = "birth_year")]
+        [JsonProperty("birth_year")]
         public int? BirthYear { get; set; }
 
         /// <summary>
         /// An array that contains the user's work info.
         /// </summary>
-        [DataMember(Name = "work")]
+        [JsonProperty("work")]
         public List<Work> Work { get; set; }
 
         /// <summary>
         /// The user's email addresses.
         /// </summary>
-        [DataMember(Name = "emails")]
+        [JsonProperty("emails")]
         public Emails Emails { get; set; }
 
         /// <summary>
         /// The user's postal addresses.
         /// </summary>
-        [DataMember(Name = "addresses")]
+        [JsonProperty("addresses")]
         public Addresses Addresses { get; set; }
 
         /// <summary>
         /// The user's phone numbers.
         /// </summary>
-        [DataMember(Name = "phones")]
+        [JsonProperty("phones")]
         public Phones Phones { get; set; }
 
         /// <summary>
         /// The user's locale code.
         /// </summary>
-        [DataMember(Name = "locale")]
+        [JsonProperty("locale")]
         public string Locale { get; set; }
-
-        /// <summary>
-        /// The time, in ISO 8601 format, at which the user last updated the object.
-        /// </summary>
-        [DataMember(Name = "updated_time")]
-        public string UpdatedTime { get; set; }
     }
 }

@@ -14,18 +14,18 @@
 
 namespace LiveSDK.ObjectModel
 {
-    using System.Runtime.Serialization;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// Info about the user's work position.
     /// </summary>
-    [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
+    [JsonObject]
     public class Position 
     {
         /// <summary>
         /// The name of the user's work position, or null if the name of the work position is not specified.
         /// </summary>
-        [DataMember(Name = "name")]
+        [JsonProperty("name")]
         public string Name { get; set; }
     }
 }

@@ -14,50 +14,48 @@
 
 namespace LiveSDK.ObjectModel
 {
-    using System.Runtime.Serialization;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// The user's postal address.
     /// </summary>
-    [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    [KnownType(typeof(Personal))]
-    [KnownType(typeof(Business))]
-    public class Address
+    [JsonObject(MemberSerialization.OptIn)]
+    public abstract class Address
     {
         /// <summary>
         /// The user's street address, or null if one is not specified.
         /// </summary>
-        [DataMember(Name = "street")]
+        [JsonProperty("street")]
         public string Street { get; set; }
 
         /// <summary>
         /// The second line of the user's street address, or null if one is not specified.
         /// </summary>
-        [DataMember(Name = "street_2")]
+        [JsonProperty("street_2")]
         public string Street2 { get; set; }
 
         /// <summary>
         /// The city of the user's address, or null if one is not specified.
         /// </summary>
-        [DataMember(Name = "city")]
+        [JsonProperty("city")]
         public string City { get; set; }
 
         /// <summary>
         /// The state of the user's address, or null if one is not specified.
         /// </summary>
-        [DataMember(Name = "state")]
+        [JsonProperty("state")]
         public string State { get; set; }
 
         /// <summary>
         /// The postal code of the user's address, or null if one is not specified.
         /// </summary>
-        [DataMember(Name = "postal_code")]
+        [JsonProperty("postal_code")]
         public string PostalCode { get; set; }
 
         /// <summary>
         /// The region of the user's address, or null if one is not specified.
         /// </summary>
-        [DataMember(Name = "region")]
+        [JsonProperty("region")]
         public string Region { get; set; }
     }
 }

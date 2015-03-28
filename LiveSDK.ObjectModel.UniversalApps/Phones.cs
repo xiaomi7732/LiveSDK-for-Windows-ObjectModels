@@ -14,30 +14,30 @@
 
 namespace LiveSDK.ObjectModel
 {
-    using System.Runtime.Serialization;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// The user's phone numbers.
     /// </summary>
-    [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
+    [JsonObject]
     public class Phones
     {
         /// <summary>
         /// The user's personal phone number, or null if one is not specified.
         /// </summary>
-        [DataMember(Name = "personal")]
+        [JsonProperty("personal")]
         public string Personal { get; set; }
 
         /// <summary>
         /// The user's business phone number, or null if one is not specified.
         /// </summary>
-        [DataMember(Name="business")]
+        [JsonProperty("business")]
         public string Business { get; set; }
 
         /// <summary>
         /// The user's mobile phone number, or null if one is not specified.
         /// </summary>
-        [DataMember(Name="mobile")]
+        [JsonProperty("mobile")]
         public string Mobile { get; set; }
     }
 }

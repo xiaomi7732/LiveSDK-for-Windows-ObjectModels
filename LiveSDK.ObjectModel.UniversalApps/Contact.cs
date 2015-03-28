@@ -14,43 +14,42 @@
 
 namespace LiveSDK.ObjectModel
 {
-    using System;
+    using Newtonsoft.Json;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
 
-    [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
+    [JsonObject]
     public class Contact 
     {
         public Contact() { }
 
-        [DataMember(Name = "id")]
+        [JsonProperty("id")]
         public string Id { get; internal set; }
 
-        [DataMember(Name = "first_name")]
+        [JsonProperty("first_name")]
         public string FirstName { get; set; }
 
-        [DataMember(Name = "last_name")]
+        [JsonProperty("last_name")]
         public string LastName { get; set; }
 
-        [DataMember(Name = "name")]
+        [JsonProperty("name")]
         public string Name { get; set; }
 
-        [DataMember(Name = "gender")]
+        [JsonProperty("gender")]
         public object Gender { get; set; }
 
-        [DataMember(Name = "is_friend")]
+        [JsonProperty("is_friend")]
         public bool IsFriend { get; set; }
 
-        [DataMember(Name = "is_favorite")]
+        [JsonProperty("is_favorite")]
         public bool IsFavorite { get; set; }
 
-        [DataMember(Name = "user_id")]
+        [JsonProperty("user_id")]
         public string UserId { get; internal set; }
 
-        [DataMember(Name = "email_hashes")]
+        [JsonProperty("email_hashes")]
         public List<string> EmailHashes { get; set; }
 
-        [DataMember(Name = "emails")]
+        [JsonProperty("emails")]
         public Emails Emails { get; set; }
     }
 }
