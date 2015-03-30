@@ -14,61 +14,61 @@
 
 namespace LiveSDK.ObjectModel
 {
+    using Newtonsoft.Json;
     using System;
-    using System.Runtime.Serialization;
 
     /// <summary>
     /// Refer https://msdn.microsoft.com/en-us/library/hh243648.aspx#calendar for details.
     /// </summary>
-    [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
+    [JsonObject]
     public class Calendar : LiveSDKOM
     {
         /// <summary>
         /// The Calendar object's ID.
         /// </summary>
-        [DataMember(Name = "id")]
+        [JsonProperty("id")]
         public string Id { get; set; }
 
         /// <summary>
         /// Name of the calendar.
         /// </summary>
-        [DataMember(Name = "name")]
+        [JsonProperty("name")]
         public string Name { get; set; }
-        
+
         /// <summary>
         /// Description of the calendar.
         /// </summary>
-        [DataMember(Name = "description")]
+        [JsonProperty("description")]
         public string Description { get; set; }
 
         /// <summary>
         /// The time, in ISO 8601 format, at which the calendar was created.
         /// </summary>
-        [DataMember(Name = "created_time")]
+        [JsonProperty("created_time")]
         public DateTimeOffset CreatedTime { get; set; }
 
         /// <summary>
         /// The time, in ISO 8601 format, that the calendar was last updated.
         /// </summary>
-        [DataMember(Name = "updated_time")]
+        [JsonProperty("updated_time")]
         public DateTimeOffset UpdatedTime { get; set; }
 
         /// <summary>
         /// Info about the user who owns the calendar.
         /// </summary>
-        [DataMember(Name = "from")]
+        [JsonProperty("from")]
         public CalendarOwner From { get; set; }
 
         /// <summary>
         /// A value that indicates whether this calendar is the default calendar. If this calendar is the default calendar, this value is true; otherwise, it is false.
         /// </summary>
-        [DataMember(Name = "is_default")]
+        [JsonProperty("is_default")]
         public bool IsDefault { get; set; }
 
         /// <summary>
         /// A public subscription URL with which Live Connect will synchronize properties and events periodically for this calendar. A NULL value indicates that this is not a subscribed calendar.
         /// </summary>
-        [DataMember(Name = "subscription_location")]
+        [JsonProperty("subscription_location")]
         public string SubscriptionLocation { get; set; }
 
         /// <summary>
@@ -80,26 +80,26 @@ namespace LiveSDK.ObjectModel
         ///    co_owner: The user is co-owner of this calendar.
         ///    owner: The user is the owner of this calendar.
         /// </summary>
-        [DataMember(Name = "permissions")]
+        [JsonProperty("permissions")]
         public string Permissions { get; set; }
     }
 
     /// <summary>
     /// Refer https://msdn.microsoft.com/en-us/library/hh243648.aspx#calendar for details.
     /// </summary>
-    [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    public class CalendarOwner : LiveSDKOM
+    [JsonObject]
+    public class CalendarOwner
     {
         /// <summary>
         /// The name of the user who uploaded the file.
         /// </summary>
-        [DataContract(Name="name")]
+        [JsonProperty("name")]
         public string Name { get; set; }
 
         /// <summary>
         /// The ID of the user who owns the calendar.
         /// </summary>
-        [DataContract(Name = "id")]
+        [JsonProperty("id")]
         public string Id { get; set; }
     }
 }

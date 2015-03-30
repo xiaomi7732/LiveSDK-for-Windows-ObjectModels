@@ -14,15 +14,15 @@
 
 namespace LiveSDK.ObjectModel
 {
+    using Newtonsoft.Json;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
 
-    [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
+    [JsonObject]
     public class Contacts : LiveSDKOM
     {
         public Contacts() { }
 
-        [DataMember(Name = "data")]
+        [JsonProperty("data")]
         public List<Contact> Items { get; set; }
     }
 }

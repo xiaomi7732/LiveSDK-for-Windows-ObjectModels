@@ -12,17 +12,40 @@
 /// GNU General Public License for more details.
 /// =======================================================================================
 
-using System.Runtime.Serialization;
 namespace LiveSDK.ObjectModel
 {
+    using Newtonsoft.Json;
+    using System;
     /// <summary>
     /// Base class of LiveSDK Object Models.
     /// </summary>
-    [DataContract(Namespace = LiveSDKOMConsts.DataContractsDefaltNamespace)]
-    [KnownType(typeof(Contact))]
-    [KnownType(typeof(Contacts))]
-    [KnownType(typeof(Emails))]
+    [JsonObject(MemberSerialization.OptIn)]
     public abstract class LiveSDKOM
     {
+        /// <summary>
+        /// The time, at which the user last updated the object.
+        /// </summary>
+        public DateTimeOffset? UpdatedTimeOffset
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(UpdatedTimeString))
+                {
+                    DateTimeOffset updateTime;
+                    if (DateTimeOffset.TryParse(UpdatedTimeString, out updateTime))
+                    {
+                        return updateTime;
+                    }
+                    return null;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        [JsonProperty("updated_time")]
+        private string UpdatedTimeString { get; set; }
     }
 }

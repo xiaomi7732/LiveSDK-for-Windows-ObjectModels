@@ -12,13 +12,19 @@
 /// GNU General Public License for more details.
 /// =======================================================================================
 
-using System;
 namespace LiveSDK.ObjectModel
 {
-
-    public class LiveSDKOMConsts
+    using Newtonsoft.Json;
+    /// <summary>
+    /// Info about the user's employer.
+    /// </summary>
+    [JsonObject]
+    public class Employer
     {
-        [Obsolete("Don't use DataContract, use Json.NET instead.", true)]
-        public const string DataContractsDefaltNamespace = "http://LiveSDK.ObjectModel.UniversalApps";
+        /// <summary>
+        /// The name of the user's employer, or null if the employer's name is not specified.
+        /// </summary>
+        [JsonProperty("name")]
+        public string Name { get; set; }
     }
 }

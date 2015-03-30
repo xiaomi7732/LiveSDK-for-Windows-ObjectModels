@@ -12,13 +12,32 @@
 /// GNU General Public License for more details.
 /// =======================================================================================
 
-using System;
 namespace LiveSDK.ObjectModel
 {
+    using Newtonsoft.Json;
 
-    public class LiveSDKOMConsts
+    /// <summary>
+    /// The user's phone numbers.
+    /// </summary>
+    [JsonObject]
+    public class Phones
     {
-        [Obsolete("Don't use DataContract, use Json.NET instead.", true)]
-        public const string DataContractsDefaltNamespace = "http://LiveSDK.ObjectModel.UniversalApps";
+        /// <summary>
+        /// The user's personal phone number, or null if one is not specified.
+        /// </summary>
+        [JsonProperty("personal")]
+        public string Personal { get; set; }
+
+        /// <summary>
+        /// The user's business phone number, or null if one is not specified.
+        /// </summary>
+        [JsonProperty("business")]
+        public string Business { get; set; }
+
+        /// <summary>
+        /// The user's mobile phone number, or null if one is not specified.
+        /// </summary>
+        [JsonProperty("mobile")]
+        public string Mobile { get; set; }
     }
 }

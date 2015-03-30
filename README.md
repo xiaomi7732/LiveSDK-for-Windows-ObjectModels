@@ -1,5 +1,5 @@
 # LiveSDK-for-Windows-ObjectModels
-This is an object models for Live-SDK-for-Windows to make it easier to use.
+This is object models for Live-SDK-for-Windows to make it easier to use, cause less error.
 
 # Code samples
 1. Add NuGet package of LiveSDK.
@@ -66,4 +66,5 @@ namespace SampleCode
 }
 ```
 # Project progress
+3/27: Wrap up the User object.
 3/23: Just started this project. Only Contacts and Pictures are supported.

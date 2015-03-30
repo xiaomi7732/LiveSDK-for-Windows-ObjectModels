@@ -15,9 +15,8 @@
 namespace LiveSDK.ObjectModel.Extensions
 {
     using Microsoft.Live;
+    using Newtonsoft.Json;
     using System;
-    using System.IO;
-    using System.Runtime.Serialization.Json;
     using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
@@ -36,11 +35,7 @@ namespace LiveSDK.ObjectModel.Extensions
         {
             try
             {
-                DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(T));
-                using (var memoryStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(json)))
-                {
-                    return (T)serializer.ReadObject(memoryStream);
-                }
+                return JsonConvert.DeserializeObject<T>(json);
             }
             catch
             {
@@ -88,9 +83,9 @@ namespace LiveSDK.ObjectModel.Extensions
             }
             if (operationResult != null && !string.IsNullOrEmpty(operationResult.RawResult))
             {
-                string json = operationResult.RawResult;
-                return json.TryJsonParse<T>();
-            }
+            string json = operationResult.RawResult;
+            return json.TryJsonParse<T>();
+        }
             return null;
         }
 

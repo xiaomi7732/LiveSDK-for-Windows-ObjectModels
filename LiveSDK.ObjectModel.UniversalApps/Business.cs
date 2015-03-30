@@ -12,13 +12,15 @@
 /// GNU General Public License for more details.
 /// =======================================================================================
 
-using System;
 namespace LiveSDK.ObjectModel
 {
+    using Newtonsoft.Json;
 
-    public class LiveSDKOMConsts
+    /// <summary>
+    /// The user's business postal address.
+    /// </summary>
+    [JsonObject]
+    public class Business : Address
     {
-        [Obsolete("Don't use DataContract, use Json.NET instead.", true)]
-        public const string DataContractsDefaltNamespace = "http://LiveSDK.ObjectModel.UniversalApps";
     }
 }
