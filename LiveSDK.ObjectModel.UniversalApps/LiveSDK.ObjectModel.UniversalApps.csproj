@@ -40,6 +40,7 @@
     <Compile Include="Addresses.cs" />
     <Compile Include="Business.cs" />
     <Compile Include="Employer.cs" />
+    <Compile Include="Calendar.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="Contacts.cs" />
     <Compile Include="Emails.cs" />

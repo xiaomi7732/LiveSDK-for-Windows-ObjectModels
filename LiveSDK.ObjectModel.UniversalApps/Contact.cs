@@ -18,7 +18,7 @@ namespace LiveSDK.ObjectModel
     using System.Collections.Generic;
 
     [JsonObject]
-    public class Contact 
+    public class Contact : LiveSDKOM
     {
         public Contact() { }
 
@@ -48,6 +48,13 @@ namespace LiveSDK.ObjectModel
 
         [JsonProperty("email_hashes")]
         public List<string> EmailHashes { get; set; }
+
+
+        [JsonProperty("birth_day")]
+        public int? BirthDay { get; set; }
+
+        [JsonProperty("birth_month")]
+        public int? BirthMonth { get; set; }
 
         [JsonProperty("emails")]
         public Emails Emails { get; set; }
