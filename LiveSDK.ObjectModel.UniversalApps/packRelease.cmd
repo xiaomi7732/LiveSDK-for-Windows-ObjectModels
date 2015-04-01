@@ -1,0 +1,1 @@
+NuGet.exe pack LiveSDK.ObjectModel.UniversalApps.csproj -Prop Configuration=Release 

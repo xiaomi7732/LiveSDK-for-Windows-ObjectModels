@@ -69,6 +69,7 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packRelease.cmd" />
   </ItemGroup>
   <ItemGroup>
     <TargetPlatform Include="Windows, Version=8.1" />
