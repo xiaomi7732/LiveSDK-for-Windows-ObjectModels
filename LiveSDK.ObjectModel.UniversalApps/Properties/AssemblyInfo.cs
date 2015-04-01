@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("LiveSDK Object Model for Windows Universal Apps")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Saar")]
-[assembly: AssemblyProduct("LiveSDKOM")]
+[assembly: AssemblyProduct("LiveSDK.ObjectModel.UniversalApps")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -28,3 +28,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("0.1.0.0")]
 [assembly: AssemblyFileVersion("0.1.0.0")]
+[assembly: AssemblyInformationalVersion("0.1.0.0")]
