@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>LiveSDK.ObjectModel</id>
-    <version>0.1.0</version>
+    <version>0.1.0-alpha</version>
     <title>LiveSDK Object Model</title>
     <authors>Saar</authors>
     <owners>Saar</owners>
