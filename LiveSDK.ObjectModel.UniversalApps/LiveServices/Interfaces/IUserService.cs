@@ -1,6 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 using Windows.Storage;
-namespace LiveSDK.ObjectModel.LiveServices.Implementations
+namespace LiveSDK.ObjectModel.LiveServices.Interfaces
 {
     public interface IUserService
     {
@@ -8,19 +9,19 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
         /// Get user Info
         /// </summary>
         /// <returns></returns>
-        Task<User> GetCurrentUserAsync();
+        Task<User> GetCurrentUserAsync(CancellationToken? cancel = null);
 
         /// <summary>
         /// Get user picture info
         /// </summary>
         /// <returns></returns>
-        Task<Picture> GetCurrentUserPictureAsync();
+        Task<Picture> GetCurrentUserPictureAsync(CancellationToken? cancel = null);
 
         /// <summary>
         /// Download user picture to a storage.
         /// </summary>
         /// <param name="downloadTo"></param>
         /// <returns></returns>
-        Task DownloadCurrentUserPicture(IStorageFile downloadTo);
+        Task DownloadCurrentUserPictureAsync(IStorageFile resultFile, CancellationToken? cancel = null);
     }
 }

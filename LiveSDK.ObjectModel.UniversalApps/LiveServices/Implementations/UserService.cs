@@ -1,12 +1,13 @@
 ﻿using LiveSDK.ObjectModel.Extensions;
+using LiveSDK.ObjectModel.LiveServices.Interfaces;
 using Microsoft.Live;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
-using Windows.Networking.BackgroundTransfer;
 using Windows.Storage;
 namespace LiveSDK.ObjectModel.LiveServices.Implementations
 {
-    public class UserService : LiveService, LiveSDK.ObjectModel.LiveServices.Implementations.IUserService
+    public class UserService : LiveService, IUserService
     {
         public UserService()
         {
@@ -19,27 +20,25 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
 
         }
 
-        public async Task<User> GetCurrentUserAsync()
+        public async Task<User> GetCurrentUserAsync(CancellationToken? cancel = null)
         {
             LiveConnectClient client = await GetConnectClientAsync();
-            User user = await client.GetAsync<User>("/me");
+            User user = await client.GetAsync<User>("/me", cancel);
             return user;
         }
 
-        public async Task<Picture> GetCurrentUserPictureAsync()
+        public async Task<Picture> GetCurrentUserPictureAsync(CancellationToken? cancel = null)
         {
             LiveConnectClient client = await GetConnectClientAsync();
-            Picture picture = await client.GetAsync<Picture>("/me/picture");
+            Picture picture = await client.GetAsync<Picture>("/me/picture", cancel);
             return picture;
         }
 
-        public async Task DownloadCurrentUserPicture(IStorageFile resultFile)
+        public async Task DownloadCurrentUserPictureAsync(IStorageFile resultFile, CancellationToken? cancel = null)
         {
-            Picture picture = await GetCurrentUserPictureAsync();
+            Picture picture = await GetCurrentUserPictureAsync(cancel);
             Uri source = new Uri(picture.Location);
-            BackgroundDownloader downloader = new BackgroundDownloader();
-            DownloadOperation operation = downloader.CreateDownload(source, resultFile);
-            await operation.StartAsync();
+            await DownloadFileAsync(source, resultFile, cancel);
         }
     }
 }

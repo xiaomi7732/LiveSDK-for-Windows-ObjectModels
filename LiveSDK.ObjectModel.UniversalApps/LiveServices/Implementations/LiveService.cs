@@ -1,17 +1,15 @@
 ﻿using Microsoft.Live;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
+using Windows.Networking.BackgroundTransfer;
+using Windows.Storage;
 
 namespace LiveSDK.ObjectModel.LiveServices.Implementations
 {
     public abstract class LiveService
     {
-        public LiveService()
-        {
-
-        }
-
         public LiveService(params string[] scopes)
         {
             Scopes = new List<string>();
@@ -47,6 +45,13 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
                 return connect;
             }
             throw new InvalidOperationException("Fail to fetch the Live Connect Client");
+        }
+
+        public async Task DownloadFileAsync(Uri source, IStorageFile resultFile, CancellationToken? cancel = null)
+        {
+            BackgroundDownloader downloader = new BackgroundDownloader();
+            DownloadOperation operation = downloader.CreateDownload(source, resultFile);
+            await operation.StartAsync();
         }
     }
 }

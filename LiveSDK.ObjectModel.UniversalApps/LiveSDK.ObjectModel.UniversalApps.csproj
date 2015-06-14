@@ -48,6 +48,8 @@
     <Compile Include="LiveScopes.cs" />
     <Compile Include="LiveSDKOM.cs" />
     <Compile Include="LiveSDKOMConsts.cs" />
+    <Compile Include="LiveServices\Implementations\ContactService.cs" />
+    <Compile Include="LiveServices\Interfaces\IContactService.cs" />
     <Compile Include="LiveServices\Interfaces\IUserService.cs" />
     <Compile Include="LiveServices\Implementations\LiveService.cs" />
     <Compile Include="LiveServices\Implementations\UserService.cs" />
