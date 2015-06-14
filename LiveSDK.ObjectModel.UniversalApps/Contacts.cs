@@ -11,11 +11,11 @@
 /// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 /// GNU General Public License for more details.
 /// =======================================================================================
+using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace LiveSDK.ObjectModel
 {
-    using Newtonsoft.Json;
-    using System.Collections.Generic;
 
     [JsonObject]
     public class Contacts : LiveSDKOM

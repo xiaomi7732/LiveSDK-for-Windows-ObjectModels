@@ -11,11 +11,11 @@
 /// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 /// GNU General Public License for more details.
 /// =======================================================================================
+using Newtonsoft.Json;
+using System;
 
 namespace LiveSDK.ObjectModel
 {
-    using Newtonsoft.Json;
-    using System;
 
     /// <summary>
     /// Refer https://msdn.microsoft.com/en-us/library/hh243648.aspx#calendar for details.

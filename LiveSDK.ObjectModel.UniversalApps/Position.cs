@@ -11,16 +11,15 @@
 /// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 /// GNU General Public License for more details.
 /// =======================================================================================
+using Newtonsoft.Json;
 
 namespace LiveSDK.ObjectModel
 {
-    using Newtonsoft.Json;
-
     /// <summary>
     /// Info about the user's work position.
     /// </summary>
     [JsonObject]
-    public class Position 
+    public class Position
     {
         /// <summary>
         /// The name of the user's work position, or null if the name of the work position is not specified.

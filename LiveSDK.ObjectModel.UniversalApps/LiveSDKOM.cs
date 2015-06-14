@@ -11,11 +11,11 @@
 /// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 /// GNU General Public License for more details.
 /// =======================================================================================
+using Newtonsoft.Json;
+using System;
 
 namespace LiveSDK.ObjectModel
 {
-    using Newtonsoft.Json;
-    using System;
     /// <summary>
     /// Base class of LiveSDK Object Models.
     /// </summary>

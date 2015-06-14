@@ -11,11 +11,10 @@
 /// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 /// GNU General Public License for more details.
 /// =======================================================================================
-
 using System;
+
 namespace LiveSDK.ObjectModel
 {
-
     public class LiveSDKOMConsts
     {
         [Obsolete("Don't use DataContract, use Json.NET instead.", true)]
