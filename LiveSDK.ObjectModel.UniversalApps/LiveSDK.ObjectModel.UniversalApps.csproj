@@ -48,6 +48,9 @@
     <Compile Include="LiveScopes.cs" />
     <Compile Include="LiveSDKOM.cs" />
     <Compile Include="LiveSDKOMConsts.cs" />
+    <Compile Include="LiveServices\Interfaces\IUserService.cs" />
+    <Compile Include="LiveServices\Implementations\LiveService.cs" />
+    <Compile Include="LiveServices\Implementations\UserService.cs" />
     <Compile Include="Personal.cs" />
     <Compile Include="Phones.cs" />
     <Compile Include="Picture.cs" />
@@ -75,6 +78,7 @@
     <TargetPlatform Include="Windows, Version=8.1" />
     <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
