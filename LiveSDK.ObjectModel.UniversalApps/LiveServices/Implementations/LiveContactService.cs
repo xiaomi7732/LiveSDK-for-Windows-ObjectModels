@@ -40,28 +40,28 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
             }
         }
 
-        public async Task<Picture> GetPictureAsync(string contactId, CancellationToken? cancel = null)
+        public async Task<Picture> GetPictureAsync(string contactUserId, CancellationToken? cancel = null)
         {
             LiveConnectClient connectClient = await GetConnectClientAsync();
-            Picture picture = await connectClient.GetAsync<Picture>(string.Format("{0}/picture", contactId), cancel);
+            Picture picture = await connectClient.GetAsync<Picture>(string.Format("{0}/picture", contactUserId), cancel);
             return picture;
         }
 
         public async Task<Picture> GetPictureAsync(Contact contact, CancellationToken? cancel = null)
         {
-            return await GetPictureAsync(contact.Id, cancel);
+            return await GetPictureAsync(contact.UserId, cancel);
         }
 
-        public async Task DownloadPictureAsync(string contactId, IStorageFile resultFile, CancellationToken? cancel = null)
+        public async Task DownloadPictureAsync(string contactUserId, IStorageFile resultFile, CancellationToken? cancel = null)
         {
-            Picture picture = await GetPictureAsync(contactId, cancel);
+            Picture picture = await GetPictureAsync(contactUserId, cancel);
             Uri source = new Uri(picture.Location);
             await DownloadFileAsync(source, resultFile, cancel);
         }
 
         public async Task DownloadPictureAsync(Contact contact, IStorageFile resultFile, CancellationToken? cancel = null)
         {
-            await DownloadPictureAsync(contact.Id, resultFile, cancel);
+            await DownloadPictureAsync(contact.UserId, resultFile, cancel);
         }
     }
 }
