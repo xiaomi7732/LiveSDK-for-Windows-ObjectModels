@@ -23,14 +23,14 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
         public async Task<User> GetCurrentUserAsync(CancellationToken? cancel = null)
         {
             LiveConnectClient client = await GetConnectClientAsync();
-            User user = await client.GetAsync<User>("/me", cancel);
+            User user = await client.GetAsync<User>("me", cancel);
             return user;
         }
 
         public async Task<Picture> GetCurrentUserPictureAsync(CancellationToken? cancel = null)
         {
             LiveConnectClient client = await GetConnectClientAsync();
-            Picture picture = await client.GetAsync<Picture>("/me/picture", cancel);
+            Picture picture = await client.GetAsync<Picture>("me/picture", cancel);
             return picture;
         }
 
