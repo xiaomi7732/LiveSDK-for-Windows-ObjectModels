@@ -39,6 +39,7 @@
     <Compile Include="Address.cs" />
     <Compile Include="Addresses.cs" />
     <Compile Include="Business.cs" />
+    <Compile Include="Calendars.cs" />
     <Compile Include="Employer.cs" />
     <Compile Include="Calendar.cs" />
     <Compile Include="Contact.cs" />
@@ -48,6 +49,8 @@
     <Compile Include="LiveScopes.cs" />
     <Compile Include="LiveSDKOM.cs" />
     <Compile Include="LiveSDKOMConsts.cs" />
+    <Compile Include="LiveServices\Implementations\ILiveCalendarService.cs" />
+    <Compile Include="LiveServices\Implementations\LiveCalendarService.cs" />
     <Compile Include="LiveServices\Implementations\LiveContactService.cs" />
     <Compile Include="LiveServices\Interfaces\ILiveContactService.cs" />
     <Compile Include="LiveServices\Interfaces\ILiveUserService.cs" />
