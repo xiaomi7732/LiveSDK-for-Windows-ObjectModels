@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Windows.Storage;
 namespace LiveSDK.ObjectModel.LiveServices.Interfaces
 {
-    public interface IUserService
+    public interface ILiveUserService
     {
         /// <summary>
         /// Get user Info

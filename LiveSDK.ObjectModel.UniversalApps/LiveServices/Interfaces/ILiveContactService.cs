@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Windows.Storage;
 namespace LiveSDK.ObjectModel.LiveServices.Interfaces
 {
-    public interface IContactService
+    public interface ILiveContactService
     {
         Task DownloadPictureAsync(Contact contact, IStorageFile resultFile, CancellationToken? cancel = null);
         Task<Contacts> GetContactsAsync();

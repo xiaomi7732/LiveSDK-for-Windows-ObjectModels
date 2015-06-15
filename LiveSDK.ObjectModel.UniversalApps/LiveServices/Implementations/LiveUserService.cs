@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using Windows.Storage;
 namespace LiveSDK.ObjectModel.LiveServices.Implementations
 {
-    public class UserService : LiveService, IUserService
+    public class LiveUserService : LiveService, ILiveUserService
     {
-        public UserService()
+        public LiveUserService()
         {
 
         }
 
-        public UserService(params string[] scopes)
+        public LiveUserService(params string[] scopes)
             : base(scopes)
         {
 

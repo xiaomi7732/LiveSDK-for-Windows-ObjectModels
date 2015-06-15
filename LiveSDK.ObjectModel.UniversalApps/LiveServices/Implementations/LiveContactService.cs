@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 using Windows.Storage;
 namespace LiveSDK.ObjectModel.LiveServices.Implementations
 {
-    public class ContactService : LiveService, IContactService
+    public class LiveContactService : LiveService, ILiveContactService
     {
-        public ContactService()
+        public LiveContactService()
         {
         }
 
-        public ContactService(params string[] scopes)
+        public LiveContactService(params string[] scopes)
             : base(scopes)
         {
 
