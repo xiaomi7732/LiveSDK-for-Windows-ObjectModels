@@ -49,7 +49,7 @@
     <Compile Include="LiveScopes.cs" />
     <Compile Include="LiveSDKOM.cs" />
     <Compile Include="LiveSDKOMConsts.cs" />
-    <Compile Include="LiveServices\Implementations\ILiveCalendarService.cs" />
+    <Compile Include="LiveServices\Interfaces\ILiveCalendarService.cs" />
     <Compile Include="LiveServices\Implementations\LiveCalendarService.cs" />
     <Compile Include="LiveServices\Implementations\LiveContactService.cs" />
     <Compile Include="LiveServices\Interfaces\ILiveContactService.cs" />
