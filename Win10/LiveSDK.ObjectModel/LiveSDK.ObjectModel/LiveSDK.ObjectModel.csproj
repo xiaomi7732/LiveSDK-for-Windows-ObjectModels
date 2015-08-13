@@ -113,6 +113,84 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Address.cs">
+      <Link>Address.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Addresses.cs">
+      <Link>Addresses.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Business.cs">
+      <Link>Business.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Calendar.cs">
+      <Link>Calendar.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Calendars.cs">
+      <Link>Calendars.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Contact.cs">
+      <Link>Contact.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Contacts.cs">
+      <Link>Contacts.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Emails.cs">
+      <Link>Emails.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Employer.cs">
+      <Link>Employer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Extensions\ExtensionMethods.cs">
+      <Link>Extensions\ExtensionMethods.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveScopes.cs">
+      <Link>LiveScopes.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveSDKOM.cs">
+      <Link>LiveSDKOM.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveSDKOMConsts.cs">
+      <Link>LiveSDKOMConsts.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveServices\Implementations\LiveCalendarService.cs">
+      <Link>LiveServices\Implementations\LiveCalendarService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveServices\Implementations\LiveContactService.cs">
+      <Link>LiveServices\Implementations\LiveContactService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveServices\Implementations\LiveService.cs">
+      <Link>LiveServices\Implementations\LiveService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveServices\Implementations\LiveUserService.cs">
+      <Link>LiveServices\Implementations\LiveUserService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveServices\Interfaces\ILiveCalendarService.cs">
+      <Link>LiveServices\Interfaces\ILiveCalendarService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveServices\Interfaces\ILiveContactService.cs">
+      <Link>LiveServices\Interfaces\ILiveContactService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveServices\Interfaces\ILiveUserService.cs">
+      <Link>LiveServices\Interfaces\ILiveUserService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Personal.cs">
+      <Link>Personal.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Phones.cs">
+      <Link>Phones.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Picture.cs">
+      <Link>Picture.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Position.cs">
+      <Link>Position.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\User.cs">
+      <Link>User.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Work.cs">
+      <Link>Work.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Properties\LiveSDK.ObjectModel.rd.xml" />
   </ItemGroup>
@@ -121,6 +199,7 @@
       <HintPath>C:\Users\saars\.nuget\packages\LiveSDK\5.6.3\WindowsXAML\Microsoft.Live.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
