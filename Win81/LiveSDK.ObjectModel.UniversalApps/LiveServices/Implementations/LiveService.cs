@@ -15,6 +15,8 @@
 using Microsoft.Live;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.Networking.BackgroundTransfer;
@@ -26,7 +28,7 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
     {
         public LiveService(params string[] scopes)
         {
-            Scopes = new List<string>();
+            Debug.Assert(Scopes != null);
             if (scopes != null && scopes.Length > 0)
             {
                 foreach (string scope in scopes)
@@ -36,7 +38,18 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
             }
         }
 
-        public List<string> Scopes { get; set; }
+        public List<string> Scopes { get; private set; } = new List<string>();
+
+        public void AppendScope(params string[] scopes)
+        {
+            Debug.Assert(Scopes != null);
+            if (scopes == null || scopes.Length == 0)
+            {
+                return;
+            }
+            IEnumerable<string> newItems = scopes.Except(Scopes);
+            Scopes.AddRange(newItems);
+        }
 
         protected async Task<LiveConnectClient> GetConnectClientAsync()
         {
