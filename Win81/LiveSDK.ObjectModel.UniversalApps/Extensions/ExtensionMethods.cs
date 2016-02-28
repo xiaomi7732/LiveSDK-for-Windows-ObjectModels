@@ -14,12 +14,12 @@
 
 namespace LiveSDK.ObjectModel.Extensions
 {
-    using Microsoft.Live;
-    using Newtonsoft.Json;
     using System;
     using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
+    using Microsoft.Live;
+    using Newtonsoft.Json;
 
     public static class ExtensionMethods
     {
