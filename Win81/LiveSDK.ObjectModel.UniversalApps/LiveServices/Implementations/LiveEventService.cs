@@ -7,6 +7,15 @@ using Microsoft.Live;
 
 namespace LiveSDK.ObjectModel.LiveServices.Implementations
 {
+    /// <summary>
+    /// Serivce for Events.
+    /// The Event object contains info about events on a user's Outlook.com calendars.
+    /// The Live Connect REST API supports creating Event objects. Use the wl.events_create scope
+    /// to create Event objects on the user's default calendar only. Use the wl.calendars scope to
+    /// read Event objects on the user's calendars. Use wl.calendars_update to create Event objects
+    /// on any of the user's calendars. Use the wl.contacts_calendars scope to read Event objects
+    /// from the user's friend's calendars.
+    /// </summary>
     public class LiveEventService : LiveService, ILiveEventService
     {
         /// <summary>
@@ -28,16 +37,17 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
         /// <returns></returns>
         public async Task<Event> CreateEvent(Event newEvent, string calendarId)
         {
+            AppendScope(LiveScopes.CalendarsUpdate);
             var client = await GetConnectClientAsync();
             var eventDictionary = new Dictionary<string, object>() {
                 { "name", newEvent.Name },
                 { "description", newEvent.Description},
-                { "start_time", newEvent.StartTime.ToString("O", CultureInfo.InvariantCulture)},
-                { "end_time", newEvent.EndTime.ToString("O", CultureInfo.InvariantCulture)},
+                { "start_time", newEvent.StartTime.ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture)},
+                { "end_time", newEvent.EndTime.ToString("yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture)},
                 { "location", newEvent.Location},
-                { "is_all_day_event", newEvent.IsAllDayEvent.ToString().ToLowerInvariant() },
+                { "is_all_day_event", newEvent.IsAllDayEvent },
                 { "availability", newEvent.Availability.ToLowerInvariant()},
-                { "visibility", newEvent.Visibility??"public"}
+                { "visibility", newEvent.Visibility ?? "public"}
             };
 
             string path = "{0}/events";

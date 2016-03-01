@@ -146,6 +146,12 @@
     <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Employer.cs">
       <Link>Employer.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Event.cs">
+      <Link>Event.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Events.cs">
+      <Link>Events.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Extensions\ExtensionMethods.cs">
       <Link>Extensions\ExtensionMethods.cs</Link>
     </Compile>
@@ -164,6 +170,9 @@
     <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveServices\Implementations\LiveContactService.cs">
       <Link>LiveServices\Implementations\LiveContactService.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveServices\Implementations\LiveEventService.cs">
+      <Link>LiveServices\Implementations\LiveEventService.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveServices\Implementations\LiveService.cs">
       <Link>LiveServices\Implementations\LiveService.cs</Link>
     </Compile>
@@ -175,6 +184,9 @@
     </Compile>
     <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveServices\Interfaces\ILiveContactService.cs">
       <Link>LiveServices\Interfaces\ILiveContactService.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveServices\Interfaces\ILiveEventService.cs">
+      <Link>LiveServices\Interfaces\ILiveEventService.cs</Link>
     </Compile>
     <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\LiveServices\Interfaces\ILiveUserService.cs">
       <Link>LiveServices\Interfaces\ILiveUserService.cs</Link>

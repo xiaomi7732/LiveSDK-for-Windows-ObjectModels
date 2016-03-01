@@ -35,13 +35,13 @@ namespace LiveSDK.ObjectModel
         public string Name { get; set; }
 
         /// <summary>
-        /// The time, in ISO 8601 format, at which the event was created.
+        /// The UTC time, in ISO 8601 format, at which the event was created.
         /// </summary>
         [JsonProperty("created_time")]
         public DateTimeOffset CreatedTime { get; set; }
 
         /// <summary>
-        /// The time, in ISO 8601 format, at which the event was updated. This structure is visible only in the Event object that is returned if the event was successfully created.
+        /// The UTC time, in ISO 8601 format, at which the event was updated. This structure is visible only in the Event object that is returned if the event was successfully created.
         /// </summary>
         [JsonProperty("updated_time")]
         public DateTimeOffset UpdatedTime { get; set; }
@@ -104,7 +104,7 @@ namespace LiveSDK.ObjectModel
         /// The time, in minutes, before the event for the reminder alarm.
         /// </summary>
         [JsonProperty("reminder_time")]
-        public double ReminderTime { get; set; }
+        public double? ReminderTime { get; set; }
 
         /// <summary>
         /// The user's availability status for the event. Valid values are: 
