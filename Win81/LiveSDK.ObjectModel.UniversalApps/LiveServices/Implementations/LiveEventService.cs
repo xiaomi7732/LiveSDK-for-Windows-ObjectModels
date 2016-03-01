@@ -1,0 +1,87 @@
+﻿using System.Collections.Generic;
+using System.Globalization;
+using System.Threading.Tasks;
+using LiveSDK.ObjectModel.Extensions;
+using LiveSDK.ObjectModel.LiveServices.Interfaces;
+using Microsoft.Live;
+
+namespace LiveSDK.ObjectModel.LiveServices.Implementations
+{
+    public class LiveEventService : LiveService, ILiveEventService
+    {
+        /// <summary>
+        /// To create an Event object on the user's default calendar by using the Live Connect REST API, make a POST request to /me/events. Pass the properties for the event in the request body, as shown here.
+        ///         Content-Type: application/json
+        /// 
+        /// {
+        ///     "name": "Global Project Risk Management Meeting",
+        ///     "description": "Generate and assess risks for the project",
+        ///     "start_time": "2011-04-20T01:00:00-07:00",
+        ///     "end_time": "2011-04-20T02:00:00-07:00",
+        ///     "location": "Building 81, Room 9981, 123 Anywhere St., Redmond WA 19599",
+        ///     "is_all_day_event": false,
+        ///     "availability": "busy",
+        ///     "visibility": "public"
+        /// }
+        /// </summary>
+        /// <param name="newEvent"></param>
+        /// <returns></returns>
+        public async Task<Event> CreateEvent(Event newEvent, string calendarId)
+        {
+            var client = await GetConnectClientAsync();
+            var eventDictionary = new Dictionary<string, object>() {
+                { "name", newEvent.Name },
+                { "description", newEvent.Description},
+                { "start_time", newEvent.StartTime.ToString("O", CultureInfo.InvariantCulture)},
+                { "end_time", newEvent.EndTime.ToString("O", CultureInfo.InvariantCulture)},
+                { "location", newEvent.Location},
+                { "is_all_day_event", newEvent.IsAllDayEvent.ToString().ToLowerInvariant() },
+                { "availability", newEvent.Availability.ToLowerInvariant()},
+                { "visibility", newEvent.Visibility??"public"}
+            };
+
+            string path = "{0}/events";
+            path = string.Format(CultureInfo.InvariantCulture, path, calendarId ?? "me");
+            LiveOperationResult operationResult = await client.PostAsync(path, eventDictionary);
+            string result = operationResult.RawResult;
+            return result.TryJsonParse<Event>();
+        }
+
+        /// <summary>
+        /// Delete an event by its id. To delete an Event, make a DELETE request to /EVENT_ID.
+        /// </summary>
+        /// <param name="eventId"></param>
+        /// <returns></returns>
+        public async Task DeleteEvent(string eventId)
+        {
+            var client = await GetConnectClientAsync();
+            string path = $"/{eventId}";
+            LiveOperationResult operationResult = await client.DeleteAsync(path);
+        }
+
+        /// <summary>
+        /// To return a list of events for a calendar by using the Live Connect REST API, 
+        /// make a GET request to /CALENDAR_ID/events. This will return all events between now and the next 30 days by default.
+        /// </summary>
+        /// <param name="calendarId"></param>
+        /// <returns></returns>
+        public async Task<Events> GetCalendarEvents(string calendarId)
+        {
+            var client = await GetConnectClientAsync();
+            return await client.GetAsync<Events>($"/{calendarId}/events");
+        }
+
+        /// <summary>
+        /// To return a list of events for a user, make a GET request to 
+        /// either /me/events, or /USER_ID/events.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public async Task<Events> GetUserEvents(string userId)
+        {
+            userId = userId ?? "me";
+            var client = await GetConnectClientAsync();
+            return await client.GetAsync<Events>($"/{userId}/events");
+        }
+    }
+}

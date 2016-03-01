@@ -11,15 +11,15 @@
 /// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 /// GNU General Public License for more details.
 /// =======================================================================================
-using Newtonsoft.Json;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace LiveSDK.ObjectModel
 {
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public class Calendars : LiveSDKOM
+    public class Events : LiveSDKOM
     {
         [JsonProperty(PropertyName = "data")]
-        public List<Calendar> Items { get; set; }
+        public List<Event> Items { get; set; }
     }
 }
