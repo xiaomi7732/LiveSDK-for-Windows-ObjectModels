@@ -209,6 +209,7 @@
     <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Work.cs">
       <Link>Work.cs</Link>
     </Compile>
+    <Compile Include="Availablity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Properties\LiveSDK.ObjectModel.rd.xml" />
   </ItemGroup>

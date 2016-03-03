@@ -20,8 +20,25 @@ namespace LiveSDK.ObjectModel
     /// Refer https://msdn.microsoft.com/en-us/library/hh243648.aspx#event for details.
     /// </summary>
     [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    public class Event: LiveSDKOM
+    public class Event : LiveSDKOM
     {
+        public Event()
+        {
+
+        }
+
+        public Event(string name, string description, DateTimeOffset startTime, DateTimeOffset endTime,
+            string location, bool isAllDayEvent, Availablity availablility)
+        {
+            Name = name;
+            Description = description;
+            StartTime = startTime;
+            EndTime = endTime;
+            Location = location;
+            IsAllDayEvent = isAllDayEvent;
+            Availability = availablility.ToString().ToLowerInvariant();
+        }
+
         /// <summary>
         /// The ID of the event.
         /// </summary>
@@ -104,7 +121,7 @@ namespace LiveSDK.ObjectModel
         /// The time, in minutes, before the event for the reminder alarm.
         /// </summary>
         [JsonProperty("reminder_time")]
-        public double? ReminderTime { get; set; }
+        public int? ReminderTime { get; set; }
 
         /// <summary>
         /// The user's availability status for the event. Valid values are: 
