@@ -13,7 +13,28 @@ Starting from 0.1.3-alpha, the nuget package could be reference by Windows 8.1 A
     Install-Package LiveSDK.ObjectModel -Pre
 ```
 
+##Known issue
+
+LiveSDK for Windows Object Models depends on LiveSDK 5.6. When LiveSDK 5.6 is installed through 
+nuget, the reference is not added - complaining **no Microsoft.Live** namespace. Manually add the reference to the following location:
+
+$(USERPROFILE)\.nuget\packages\LiveSDK\\**5.6.3**\WindowsXAML\Microsoft.Live.dll
+
+Or add the following line to your .csproj:
+
+```
+  <PropertyGroup>
+    <LiveSDKVersion Condition="'$(LiveSDKVersion)' == ''">5.6.3</LiveSDKVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="$(USERPROFILE)\.nuget\packages\LiveSDK\$(LiveSDKVersion)\WindowsXAML\Microsoft.Live.dll">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+```
+
 ## Usage
+After install the nuget package,you will be making use of the library like below: 
 
 ```
 // Strong typed LiveScopes are provided in this Library.
