@@ -51,11 +51,16 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
             Scopes.AddRange(newItems);
         }
 
-        protected async Task<LiveConnectClient> GetConnectClientAsync()
+        protected async Task<LiveConnectClient> GetConnectClientAsync(params string[] scopes)
         {
+            if (scopes != null && scopes.Length > 0)
+            {
+                AppendScope(scopes);
+            }
+
             if (Scopes == null)
             {
-                throw new System.ArgumentNullException("Scopes");
+                throw new ArgumentNullException("Scopes");
             }
 
             LiveAuthClient auth = null;

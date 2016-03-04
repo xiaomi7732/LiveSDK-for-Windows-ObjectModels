@@ -125,6 +125,9 @@
     <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Addresses.cs">
       <Link>Addresses.cs</Link>
     </Compile>
+    <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Availablity.cs">
+      <Link>Availablity.cs</Link>
+    </Compile>
     <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Business.cs">
       <Link>Business.cs</Link>
     </Compile>
@@ -209,7 +212,6 @@
     <Compile Include="..\..\..\Win81\LiveSDK.ObjectModel.UniversalApps\Work.cs">
       <Link>Work.cs</Link>
     </Compile>
-    <Compile Include="Availablity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Properties\LiveSDK.ObjectModel.rd.xml" />
   </ItemGroup>

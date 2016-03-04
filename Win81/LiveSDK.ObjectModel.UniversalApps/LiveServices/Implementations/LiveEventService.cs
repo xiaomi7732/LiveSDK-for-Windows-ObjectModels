@@ -1,4 +1,18 @@
-﻿using System.Collections.Generic;
+﻿/// =======================================================================================
+/// This file is part of LiveSDK.ObjectModel.
+
+/// LiveSDK.ObjectModel is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+
+/// LiveSDK.ObjectModel is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+/// =======================================================================================
+
+using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 using LiveSDK.ObjectModel.Extensions;
@@ -35,10 +49,9 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
         /// </summary>
         /// <param name="newEvent"></param>
         /// <returns></returns>
-        public async Task<Event> CreateEvent(Event newEvent, string calendarId)
+        public async Task<Event> CreateEvent(Event newEvent, string calendarId, string[] scopes = null)
         {
-            AppendScope(LiveScopes.CalendarsUpdate);
-            var client = await GetConnectClientAsync();
+            var client = await GetConnectClientAsync(scopes);
             var eventDictionary = new Dictionary<string, object>() {
                 { "name", newEvent.Name },
                 { "description", newEvent.Description},
@@ -62,9 +75,9 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
         /// </summary>
         /// <param name="eventId"></param>
         /// <returns></returns>
-        public async Task DeleteEvent(string eventId)
+        public async Task DeleteEvent(string eventId, string[] scopes = null)
         {
-            var client = await GetConnectClientAsync();
+            var client = await GetConnectClientAsync(scopes);
             string path = $"/{eventId}";
             LiveOperationResult operationResult = await client.DeleteAsync(path);
         }
@@ -75,9 +88,9 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
         /// </summary>
         /// <param name="calendarId"></param>
         /// <returns></returns>
-        public async Task<Events> GetCalendarEvents(string calendarId)
+        public async Task<Events> GetCalendarEvents(string calendarId, string[] scopes = null)
         {
-            var client = await GetConnectClientAsync();
+            var client = await GetConnectClientAsync(scopes);
             return await client.GetAsync<Events>($"/{calendarId}/events");
         }
 
@@ -87,10 +100,10 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        public async Task<Events> GetUserEvents(string userId)
+        public async Task<Events> GetUserEvents(string userId, string[] scopes = null)
         {
             userId = userId ?? "me";
-            var client = await GetConnectClientAsync();
+            var client = await GetConnectClientAsync(scopes);
             return await client.GetAsync<Events>($"/{userId}/events");
         }
     }

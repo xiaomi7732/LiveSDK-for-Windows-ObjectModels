@@ -38,6 +38,7 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="Addresses.cs" />
+    <Compile Include="Availablity.cs" />
     <Compile Include="Business.cs" />
     <Compile Include="Calendars.cs" />
     <Compile Include="Employer.cs" />

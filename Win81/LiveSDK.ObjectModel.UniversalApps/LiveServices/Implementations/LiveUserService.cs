@@ -34,23 +34,23 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
 
         }
 
-        public async Task<User> GetCurrentUserAsync(CancellationToken? cancel = null)
+        public async Task<User> GetCurrentUserAsync(CancellationToken? cancel = null, string[] scopes = null)
         {
-            LiveConnectClient client = await GetConnectClientAsync();
+            LiveConnectClient client = await GetConnectClientAsync(scopes);
             User user = await client.GetAsync<User>("me", cancel);
             return user;
         }
 
-        public async Task<Picture> GetCurrentUserPictureAsync(CancellationToken? cancel = null)
+        public async Task<Picture> GetCurrentUserPictureAsync(CancellationToken? cancel = null, string[] scopes = null)
         {
-            LiveConnectClient client = await GetConnectClientAsync();
+            LiveConnectClient client = await GetConnectClientAsync(scopes);
             Picture picture = await client.GetAsync<Picture>("me/picture", cancel);
             return picture;
         }
 
-        public async Task DownloadCurrentUserPictureAsync(IStorageFile resultFile, CancellationToken? cancel = null)
+        public async Task DownloadCurrentUserPictureAsync(IStorageFile resultFile, CancellationToken? cancel = null, string[] scopes = null)
         {
-            Picture picture = await GetCurrentUserPictureAsync(cancel);
+            Picture picture = await GetCurrentUserPictureAsync(cancel, scopes);
             Uri source = new Uri(picture.Location);
             await DownloadFileAsync(source, resultFile, cancel);
         }

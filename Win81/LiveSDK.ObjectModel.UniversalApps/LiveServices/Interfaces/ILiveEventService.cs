@@ -25,14 +25,14 @@ namespace LiveSDK.ObjectModel.LiveServices.Interfaces
         /// </summary>
         /// <param name="calendarId"></param>
         /// <returns></returns>
-        Task<Events> GetCalendarEvents(string calendarId);
+        Task<Events> GetCalendarEvents(string calendarId, string[] scopes=null);
 
         /// <summary>
         /// Return a list of events for a user.
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        Task<Events> GetUserEvents(string userId);
+        Task<Events> GetUserEvents(string userId, string[] scopes = null);
 
         /// <summary>
         /// To create an Event object on a calendar.
@@ -40,13 +40,13 @@ namespace LiveSDK.ObjectModel.LiveServices.Interfaces
         /// <param name="newEvent"></param>
         /// <param name="calendarId">Calendar id. To default calendar if not specified.</param>
         /// <returns></returns>
-        Task<Event> CreateEvent(Event newEvent, string calendarId);
+        Task<Event> CreateEvent(Event newEvent, string calendarId, string[] scopes = null);
 
         /// <summary>
         /// Delete an Event
         /// </summary>
         /// <param name="eventId"></param>
         /// <returns></returns>
-        Task DeleteEvent(string eventId);
+        Task DeleteEvent(string eventId, string[] scopes = null);
     }
 }

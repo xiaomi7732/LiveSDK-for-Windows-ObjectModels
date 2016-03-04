@@ -27,19 +27,19 @@ namespace LiveSDK.ObjectModel.LiveServices.Interfaces
         /// Get user Info
         /// </summary>
         /// <returns></returns>
-        Task<User> GetCurrentUserAsync(CancellationToken? cancel = null);
+        Task<User> GetCurrentUserAsync(CancellationToken? cancel = null, string[] scopes = null);
 
         /// <summary>
         /// Get user picture info
         /// </summary>
         /// <returns></returns>
-        Task<Picture> GetCurrentUserPictureAsync(CancellationToken? cancel = null);
+        Task<Picture> GetCurrentUserPictureAsync(CancellationToken? cancel = null, string[] scopes = null);
 
         /// <summary>
         /// Download user picture to a storage.
         /// </summary>
         /// <param name="downloadTo"></param>
         /// <returns></returns>
-        Task DownloadCurrentUserPictureAsync(IStorageFile resultFile, CancellationToken? cancel = null);
+        Task DownloadCurrentUserPictureAsync(IStorageFile resultFile, CancellationToken? cancel = null, string[] scopes = null);
     }
 }
