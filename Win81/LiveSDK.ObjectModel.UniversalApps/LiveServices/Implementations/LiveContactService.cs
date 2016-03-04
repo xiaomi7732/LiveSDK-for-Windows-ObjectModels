@@ -12,13 +12,14 @@
 /// GNU General Public License for more details.
 /// =======================================================================================
 
-using LiveSDK.ObjectModel.Extensions;
-using LiveSDK.ObjectModel.LiveServices.Interfaces;
-using Microsoft.Live;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using LiveSDK.ObjectModel.Extensions;
+using LiveSDK.ObjectModel.LiveServices.Interfaces;
+using Microsoft.Live;
 using Windows.Storage;
+
 namespace LiveSDK.ObjectModel.LiveServices.Implementations
 {
     public class LiveContactService : LiveService, ILiveContactService
@@ -33,49 +34,49 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
 
         }
 
-        public async Task<Contacts> GetContactsAsync()
+        public async Task<Contacts> GetContactsAsync(string[] scopes = null)
         {
-            LiveConnectClient connectClient = await GetConnectClientAsync();
+            LiveConnectClient connectClient = await GetConnectClientAsync(scopes);
             Contacts contacts = await connectClient.GetAsync<Contacts>("me/contacts");
             return contacts;
         }
 
-        public async Task<Contacts> GetContactsAsync(int skip = 0, int take = 50, CancellationToken? cancel = null)
+        public async Task<Contacts> GetContactsAsync(int skip = 0, int take = 50, CancellationToken? cancel = null, string[] scopes = null)
         {
             if (skip < 0 || take <= 0)
             {
-                return await GetContactsAsync();
+                return await GetContactsAsync(scopes: scopes);
             }
             else
             {
-                LiveConnectClient connectClient = await GetConnectClientAsync();
+                LiveConnectClient connectClient = await GetConnectClientAsync(scopes);
                 Contacts contacts = await connectClient.GetAsync<Contacts>("me/contacts", cancel, skip, take);
                 return contacts;
             }
         }
 
-        public async Task<Picture> GetPictureAsync(string contactUserId, CancellationToken? cancel = null)
+        public async Task<Picture> GetPictureAsync(string contactUserId, CancellationToken? cancel = null, string[] scopes = null)
         {
-            LiveConnectClient connectClient = await GetConnectClientAsync();
+            LiveConnectClient connectClient = await GetConnectClientAsync(scopes);
             Picture picture = await connectClient.GetAsync<Picture>(string.Format("{0}/picture", contactUserId), cancel);
             return picture;
         }
 
-        public async Task<Picture> GetPictureAsync(Contact contact, CancellationToken? cancel = null)
+        public async Task<Picture> GetPictureAsync(Contact contact, CancellationToken? cancel = null, string[] scopes = null)
         {
-            return await GetPictureAsync(contact.UserId, cancel);
+            return await GetPictureAsync(contact.UserId, cancel, scopes);
         }
 
-        public async Task DownloadPictureAsync(string contactUserId, IStorageFile resultFile, CancellationToken? cancel = null)
+        public async Task DownloadPictureAsync(string contactUserId, IStorageFile resultFile, CancellationToken? cancel = null, string[] scopes = null)
         {
-            Picture picture = await GetPictureAsync(contactUserId, cancel);
+            Picture picture = await GetPictureAsync(contactUserId, cancel, scopes);
             Uri source = new Uri(picture.Location);
             await DownloadFileAsync(source, resultFile, cancel);
         }
 
-        public async Task DownloadPictureAsync(Contact contact, IStorageFile resultFile, CancellationToken? cancel = null)
+        public async Task DownloadPictureAsync(Contact contact, IStorageFile resultFile, CancellationToken? cancel = null, string[] scopes = null)
         {
-            await DownloadPictureAsync(contact.UserId, resultFile, cancel);
+            await DownloadPictureAsync(contact.UserId, resultFile, cancel, scopes);
         }
     }
 }

@@ -29,7 +29,8 @@ namespace LiveSDK.ObjectModel.LiveServices.Interfaces
         /// <param name="contactUserId">Contact.UserId</param>
         /// <param name="resultFile">Download dest.</param>
         /// <param name="cancel">Cancellation token for the operation.</param>
-        Task DownloadPictureAsync(string contactUserId, IStorageFile resultFile, CancellationToken? cancel = null);
+        /// <param name="scopes">Additonal Scopes.</param>
+        Task DownloadPictureAsync(string contactUserId, IStorageFile resultFile, CancellationToken? cancel = null, string[] scopes = null);
 
         /// <summary>
         /// Download the picture of the contact.
@@ -37,13 +38,13 @@ namespace LiveSDK.ObjectModel.LiveServices.Interfaces
         /// <param name="contact">Contact object for the picture.</param>
         /// <param name="resultFile">Download dest.</param>
         /// <param name="cancel">Cancellation token for the operation.</param>
-        Task DownloadPictureAsync(Contact contact, IStorageFile resultFile, CancellationToken? cancel = null);
+        Task DownloadPictureAsync(Contact contact, IStorageFile resultFile, CancellationToken? cancel = null, string[] scopes = null);
 
         /// <summary>
         /// Get all contacts of current user.
         /// </summary>
         /// <returns>Contacts object. Fetch Contacts.Items for contact objects.</returns>
-        Task<Contacts> GetContactsAsync();
+        Task<Contacts> GetContactsAsync(string[] scopes = null);
 
         /// <summary>
         /// Get a page of contacts.
@@ -52,7 +53,7 @@ namespace LiveSDK.ObjectModel.LiveServices.Interfaces
         /// <param name="take">Number of records to take for the results.</param>
         /// <param name="cancel">Cancellation token for the operation.</param>
         /// <returns>Contacts object. Fetch Contacts.Items for contact objects.</returns>
-        Task<Contacts> GetContactsAsync(int skip = 0, int take = 50, System.Threading.CancellationToken? cancel = null);
+        Task<Contacts> GetContactsAsync(int skip = 0, int take = 50, System.Threading.CancellationToken? cancel = null, string[] scopes = null);
 
         /// <summary>
         /// Get a picture object for a contact.
@@ -60,7 +61,7 @@ namespace LiveSDK.ObjectModel.LiveServices.Interfaces
         /// <param name="contactUserId">Contact's user id.</param>
         /// <param name="cancel">Cancellation token for the operation.</param>
         /// <returns>Picture object for the contact</returns>
-        Task<Picture> GetPictureAsync(string contactUserId, CancellationToken? cancel = null);
+        Task<Picture> GetPictureAsync(string contactUserId, CancellationToken? cancel = null, string[] scopes = null);
 
         /// <summary>
         /// Get a picture object for a contact.
@@ -68,6 +69,6 @@ namespace LiveSDK.ObjectModel.LiveServices.Interfaces
         /// <param name="contact">Contact object for the picture.</param>
         /// <param name="cancel">Cancellation token for the operation.</param>
         /// <returns>Picture object for the contact</returns>
-        Task<Picture> GetPictureAsync(Contact contact, CancellationToken? cancel = null);
+        Task<Picture> GetPictureAsync(Contact contact, CancellationToken? cancel = null, string[] scopes = null);
     }
 }

@@ -11,35 +11,42 @@
 /// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 /// GNU General Public License for more details.
 /// =======================================================================================
-
-using System.Threading;
 using System.Threading.Tasks;
-using Windows.Storage;
 
 namespace LiveSDK.ObjectModel.LiveServices.Interfaces
 {
     /// <summary>
-    /// Service to provide user related operations.
+    /// Live Event operations
     /// </summary>
-    public interface ILiveUserService
+    public interface ILiveEventService
     {
         /// <summary>
-        /// Get user Info
+        /// Return all events between now and the next 30 days by default.
         /// </summary>
+        /// <param name="calendarId"></param>
         /// <returns></returns>
-        Task<User> GetCurrentUserAsync(CancellationToken? cancel = null, string[] scopes = null);
+        Task<Events> GetCalendarEvents(string calendarId, string[] scopes=null);
 
         /// <summary>
-        /// Get user picture info
+        /// Return a list of events for a user.
         /// </summary>
+        /// <param name="userId"></param>
         /// <returns></returns>
-        Task<Picture> GetCurrentUserPictureAsync(CancellationToken? cancel = null, string[] scopes = null);
+        Task<Events> GetUserEvents(string userId, string[] scopes = null);
 
         /// <summary>
-        /// Download user picture to a storage.
+        /// To create an Event object on a calendar.
         /// </summary>
-        /// <param name="downloadTo"></param>
+        /// <param name="newEvent"></param>
+        /// <param name="calendarId">Calendar id. To default calendar if not specified.</param>
         /// <returns></returns>
-        Task DownloadCurrentUserPictureAsync(IStorageFile resultFile, CancellationToken? cancel = null, string[] scopes = null);
+        Task<Event> CreateEvent(Event newEvent, string calendarId, string[] scopes = null);
+
+        /// <summary>
+        /// Delete an Event
+        /// </summary>
+        /// <param name="eventId"></param>
+        /// <returns></returns>
+        Task DeleteEvent(string eventId, string[] scopes = null);
     }
 }

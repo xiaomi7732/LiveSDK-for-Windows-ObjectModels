@@ -38,18 +38,26 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="Addresses.cs" />
+    <Compile Include="Availablity.cs" />
     <Compile Include="Business.cs" />
+    <Compile Include="Calendars.cs" />
     <Compile Include="Employer.cs" />
     <Compile Include="Calendar.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="Contacts.cs" />
     <Compile Include="Emails.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="Events.cs" />
     <Compile Include="Extensions\ExtensionMethods.cs" />
     <Compile Include="LiveScopes.cs" />
     <Compile Include="LiveSDKOM.cs" />
     <Compile Include="LiveSDKOMConsts.cs" />
+    <Compile Include="LiveServices\Implementations\LiveEventService.cs" />
+    <Compile Include="LiveServices\Interfaces\ILiveCalendarService.cs" />
+    <Compile Include="LiveServices\Implementations\LiveCalendarService.cs" />
     <Compile Include="LiveServices\Implementations\LiveContactService.cs" />
     <Compile Include="LiveServices\Interfaces\ILiveContactService.cs" />
+    <Compile Include="LiveServices\Interfaces\ILiveEventService.cs" />
     <Compile Include="LiveServices\Interfaces\ILiveUserService.cs" />
     <Compile Include="LiveServices\Implementations\LiveService.cs" />
     <Compile Include="LiveServices\Implementations\LiveUserService.cs" />
@@ -62,14 +70,7 @@
     <Compile Include="Work.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Live">
-      <HintPath>..\packages\LiveSDK.5.6.1\WindowsXAML\Microsoft.Live.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Fonts\LiveSymbol.ttf" />
     <None Include="LiveSDK.ObjectModel.UniversalApps.nuspec" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -80,7 +81,17 @@
     <TargetPlatform Include="Windows, Version=8.1" />
     <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="Microsoft.Live">
+      <HintPath>..\packages\LiveSDK.5.6.3\WindowsXAML\Microsoft.Live.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\portable-net45+wp80+win8+wpa81+dnxcore50\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -19,7 +19,6 @@ namespace LiveSDK.ObjectModel
     /// <summary>
     /// The User object contains info about a user. The Live Connect REST API supports reading User objects.
     /// </summary>
-    //[JsonObject]
     [JsonObject]
     public class User : LiveSDKOM
     {

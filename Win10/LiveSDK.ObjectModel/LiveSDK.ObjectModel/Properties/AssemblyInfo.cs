@@ -1,20 +1,18 @@
-﻿using System.Resources;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LiveSDK Object Model")]
-[assembly: AssemblyDescription("LiveSDK Object Model for Windows Universal Apps")]
+[assembly: AssemblyTitle("LiveSDK.ObjectModel")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Saar")]
-[assembly: AssemblyProduct("LiveSDK.ObjectModel.UniversalApps")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("LiveSDK.ObjectModel")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: NeutralResourcesLanguage("en")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -28,4 +26,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("0.1.3.0")]
 [assembly: AssemblyFileVersion("0.1.3.0")]
-[assembly: AssemblyInformationalVersion("0.1.3.0")]
+[assembly: ComVisible(false)]

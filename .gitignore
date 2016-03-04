@@ -190,4 +190,8 @@ ModelManifest.xml
 
 # Nuget packages
 packages
+project.lock.json
 *.nupkg
+
+# LiveSDK restore
+LiveSymbol.ttf
