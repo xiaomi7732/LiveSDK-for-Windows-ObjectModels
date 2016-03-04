@@ -22,12 +22,12 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="Win81\LiveSDK.ObjectModel.UniversalApps\bin\Release\LiveSDK.ObjectModel.UniversalApps.dll" target="lib\netcore451\LiveSDK.ObjectModel.UniversalApps.dll" />
-        <file src="Win81\LiveSDK.ObjectModel.UniversalApps\bin\Release\LiveSDK.ObjectModel.UniversalApps.pdb" target="lib\netcore451\LiveSDK.ObjectModel.UniversalApps.pdb" />
-        <file src="Win81\LiveSDK.ObjectModel.UniversalApps\bin\Release\LiveSDK.ObjectModel.UniversalApps.pri" target="lib\netcore451\LiveSDK.ObjectModel.UniversalApps.pri" />
-        <file src="Win10\LiveSDK.ObjectModel\LiveSDK.ObjectModel\Properties\LiveSDK.ObjectModel.rd.xml" target="lib\uap10.0\LiveSDK.ObjectModel\Properties\LiveSDK.ObjectModel.rd.xml" />
-        <file src="Win10\LiveSDK.ObjectModel\LiveSDK.ObjectModel\bin\Release\LiveSDK.ObjectModel.dll" target="lib\uap10.0\LiveSDK.ObjectModel.dll" />
-        <file src="Win10\LiveSDK.ObjectModel\LiveSDK.ObjectModel\bin\Release\LiveSDK.ObjectModel.pdb" target="lib\uap10.0\LiveSDK.ObjectModel.pdb" />
-        <file src="Win10\LiveSDK.ObjectModel\LiveSDK.ObjectModel\bin\Release\LiveSDK.ObjectModel.pri" target="lib\uap10.0\LiveSDK.ObjectModel.pri" />
+        <file src="..\Win81\LiveSDK.ObjectModel.UniversalApps\bin\Release\LiveSDK.ObjectModel.UniversalApps.dll" target="lib\netcore451\LiveSDK.ObjectModel.UniversalApps.dll" />
+        <file src="..\Win81\LiveSDK.ObjectModel.UniversalApps\bin\Release\LiveSDK.ObjectModel.UniversalApps.pdb" target="lib\netcore451\LiveSDK.ObjectModel.UniversalApps.pdb" />
+        <file src="..\Win81\LiveSDK.ObjectModel.UniversalApps\bin\Release\LiveSDK.ObjectModel.UniversalApps.pri" target="lib\netcore451\LiveSDK.ObjectModel.UniversalApps.pri" />
+        <file src="..\Win10\LiveSDK.ObjectModel\LiveSDK.ObjectModel\Properties\LiveSDK.ObjectModel.rd.xml" target="lib\uap10.0\LiveSDK.ObjectModel\Properties\LiveSDK.ObjectModel.rd.xml" />
+        <file src="..\Win10\LiveSDK.ObjectModel\LiveSDK.ObjectModel\bin\Release\LiveSDK.ObjectModel.dll" target="lib\uap10.0\LiveSDK.ObjectModel.dll" />
+        <file src="..\Win10\LiveSDK.ObjectModel\LiveSDK.ObjectModel\bin\Release\LiveSDK.ObjectModel.pdb" target="lib\uap10.0\LiveSDK.ObjectModel.pdb" />
+        <file src="..\Win10\LiveSDK.ObjectModel\LiveSDK.ObjectModel\bin\Release\LiveSDK.ObjectModel.pri" target="lib\uap10.0\LiveSDK.ObjectModel.pri" />
     </files>
 </package>
