@@ -3,7 +3,7 @@ This is object models for Live-SDK-for-Windows to make it easier to use, cause l
 
 Starting from 0.1.3-alpha, the nuget package could be reference by Windows 8.1 App or Windows 10 Universal Application Platform Apps.
 
-# Code samples
+# Consume
 ## Setup
 1. Add NuGet package of LiveSDK.
 2. Add NuGet package of LiveSDK for Windows Object Models [here](https://www.nuget.org/packages/LiveSDK.ObjectModel/).
