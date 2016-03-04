@@ -32,6 +32,15 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
     /// </summary>
     public class LiveEventService : LiveService, ILiveEventService
     {
+        public LiveEventService()
+        {
+        }
+
+        public LiveEventService(params string[] scopes)
+            : base(scopes)
+        {
+        }
+
         /// <summary>
         /// To create an Event object on the user's default calendar by using the Live Connect REST API, make a POST request to /me/events. Pass the properties for the event in the request body, as shown here.
         ///         Content-Type: application/json
