@@ -87,7 +87,7 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
         public async Task DeleteEvent(string eventId, string[] scopes = null)
         {
             var client = await GetConnectClientAsync(scopes);
-            string path = $"/{eventId}";
+            string path = $"{eventId}";
             LiveOperationResult operationResult = await client.DeleteAsync(path);
         }
 
@@ -100,7 +100,7 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
         public async Task<Events> GetCalendarEvents(string calendarId, string[] scopes = null)
         {
             var client = await GetConnectClientAsync(scopes);
-            return await client.GetAsync<Events>($"/{calendarId}/events");
+            return await client.GetAsync<Events>($"{calendarId}/events");
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace LiveSDK.ObjectModel.LiveServices.Implementations
         {
             userId = userId ?? "me";
             var client = await GetConnectClientAsync(scopes);
-            return await client.GetAsync<Events>($"/{userId}/events");
+            return await client.GetAsync<Events>($"{userId}/events");
         }
     }
 }
